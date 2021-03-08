@@ -1,0 +1,13 @@
+DeviceNetworkEvents
+| where Timestamp > ago(7d)
+| where RemoteIP == "49.12.104.241"
+	or RemoteIP == "185.238.0.233"
+	or RemoteIP == "45.153.242.129"
+	or RemoteIP == "45.11.19.70"
+	or RemoteIP == "217.8.117.148"
+	or RemoteIP == "80.226.253.106"
+	or RemoteIP == "185.246.130.118"
+	or RemoteIP == "139.60.161.62"
+	or RemoteIP == "37.1.210.119"
+	or RemoteUrl == "boobong.net"
+| project DeviceName, DeviceId, LocalPort, LocalIP, RemotePort, RemoteIP, InitiatingProcessFileName
